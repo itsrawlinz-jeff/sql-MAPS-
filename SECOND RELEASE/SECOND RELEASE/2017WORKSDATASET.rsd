@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>2017WORKS</DataSourceReference>
+      <CommandText>SELECT    Person.EmailAddress.BusinessEntityID, Person.EmailAddress.EmailAddressID, Person.EmailAddress.EmailAddress, 
+                 HumanResources.EmployeePayHistory.BusinessEntityID AS Expr1, HumanResources.EmployeePayHistory.RateChangeDate, 
+                 HumanResources.EmployeePayHistory.Rate, Person.Person.BusinessEntityID AS Expr2, Person.Person.PersonType, 
+                 Person.Person.Title, Person.Person.MiddleName, Person.Person.LastName, Person.Person.AdditionalContactInfo, 
+                 Person.Person.ModifiedDate, HumanResources.EmployeePayHistory.ModifiedDate AS Expr3, 
+                 Person.EmailAddress.ModifiedDate AS Expr4, Person.BusinessEntity.BusinessEntityID AS Expr5, 
+                 Person.BusinessEntity.ModifiedDate AS Expr6
+FROM       Person.EmailAddress INNER JOIN
+                 HumanResources.EmployeePayHistory ON 
+                 Person.EmailAddress.BusinessEntityID = HumanResources.EmployeePayHistory.BusinessEntityID INNER JOIN
+                 Person.Person ON Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID AND 
+                 Person.EmailAddress.BusinessEntityID = Person.Person.BusinessEntityID INNER JOIN
+                 Person.BusinessEntity ON Person.Person.BusinessEntityID = Person.BusinessEntity.BusinessEntityID AND 
+                 Person.Person.BusinessEntityID = Person.BusinessEntity.BusinessEntityID</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="BusinessEntityID">
+        <DataField>BusinessEntityID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="EmailAddressID">
+        <DataField>EmailAddressID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="EmailAddress">
+        <DataField>EmailAddress</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr1">
+        <DataField>Expr1</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="RateChangeDate">
+        <DataField>RateChangeDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Rate">
+        <DataField>Rate</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Expr2">
+        <DataField>Expr2</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="PersonType">
+        <DataField>PersonType</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Title">
+        <DataField>Title</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MiddleName">
+        <DataField>MiddleName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="AdditionalContactInfo">
+        <DataField>AdditionalContactInfo</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ModifiedDate">
+        <DataField>ModifiedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr3">
+        <DataField>Expr3</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr4">
+        <DataField>Expr4</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr5">
+        <DataField>Expr5</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr6">
+        <DataField>Expr6</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

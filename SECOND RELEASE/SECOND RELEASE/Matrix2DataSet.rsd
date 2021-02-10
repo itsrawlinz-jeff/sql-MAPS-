@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>CREDITDB</DataSourceReference>
+      <CommandText>SELECT    category.category_no, category.category_desc, category.category_code, charge.charge_no, charge.member_no, 
+                 charge.provider_no, charge.category_no AS Expr1, charge.charge_dt, charge.charge_amt, charge.statement_no, 
+                 charge.charge_code, corporation.corp_no, corporation.corp_name, corporation.street, corporation.city, corporation.state_prov, 
+                 corporation.country, corporation.mail_code, corporation.phone_no, corporation.expr_dt, corporation.region_no, 
+                 corporation.corp_code, member.member_no AS Expr2, member.lastname, member.firstname, member.middleinitial, 
+                 member.street AS Expr3, member.city AS Expr4, member.state_prov AS Expr5, member.country AS Expr6, 
+                 member.mail_code AS Expr7, member.phone_no AS Expr8, member.photograph, member.issue_dt, member.expr_dt AS Expr9, 
+                 member.region_no AS Expr10, member.corp_no AS Expr11, member.prev_balance, member.curr_balance, 
+                 member.member_code, statement.statement_no AS Expr12, statement.member_no AS Expr13, statement.statement_dt, 
+                 statement.due_dt, statement.statement_amt, statement.statement_code, region.region_no AS Expr14, region.region_name, 
+                 region.street AS Expr15, region.city AS Expr16, region.state_prov AS Expr17, region.country AS Expr18, 
+                 region.mail_code AS Expr19, region.phone_no AS Expr20, region.region_code, provider.provider_no AS Expr21, 
+                 provider.provider_name, provider.street AS Expr22, provider.city AS Expr23, provider.state_prov AS Expr24, 
+                 provider.mail_code AS Expr25, provider.country AS Expr26, provider.phone_no AS Expr27, provider.issue_dt AS Expr28, 
+                 provider.expr_dt AS Expr29, provider.region_no AS Expr30, provider.provider_code, payment.payment_no, 
+                 payment.member_no AS Expr31, payment.payment_dt, payment.payment_amt, payment.statement_no AS Expr32, 
+                 payment.payment_code
+FROM       category INNER JOIN
+                 charge ON category.category_no = charge.category_no INNER JOIN
+                 member ON charge.member_no = member.member_no INNER JOIN
+                 corporation ON member.corp_no = corporation.corp_no INNER JOIN
+                 payment ON member.member_no = payment.member_no INNER JOIN
+                 provider ON charge.provider_no = provider.provider_no INNER JOIN
+                 region ON member.region_no = region.region_no AND corporation.region_no = region.region_no AND 
+                 provider.region_no = region.region_no INNER JOIN
+                 statement ON member.member_no = statement.member_no</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="category_no">
+        <DataField>category_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="category_desc">
+        <DataField>category_desc</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="category_code">
+        <DataField>category_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="charge_no">
+        <DataField>charge_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="member_no">
+        <DataField>member_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="provider_no">
+        <DataField>provider_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>firstname</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MiddleInitial">
+        <DataField>middleinitial</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="charge_dt">
+        <DataField>charge_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>lastname</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="charge_amt">
+        <DataField>charge_amt</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Expr1">
+        <DataField>Expr1</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="statement_no">
+        <DataField>statement_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr2">
+        <DataField>Expr2</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="charge_code">
+        <DataField>charge_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr3">
+        <DataField>Expr3</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="corp_no">
+        <DataField>corp_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr4">
+        <DataField>Expr4</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="corp_name">
+        <DataField>corp_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="street">
+        <DataField>street</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="city">
+        <DataField>city</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="state_prov">
+        <DataField>state_prov</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="country">
+        <DataField>country</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="mail_code">
+        <DataField>mail_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="phone_no">
+        <DataField>phone_no</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="expr_dt">
+        <DataField>expr_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="region_no">
+        <DataField>region_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="corp_code">
+        <DataField>corp_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr5">
+        <DataField>Expr5</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr6">
+        <DataField>Expr6</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr7">
+        <DataField>Expr7</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr8">
+        <DataField>Expr8</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="photograph">
+        <DataField>photograph</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
+      <Field Name="issue_dt">
+        <DataField>issue_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr9">
+        <DataField>Expr9</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr10">
+        <DataField>Expr10</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr11">
+        <DataField>Expr11</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="prev_balance">
+        <DataField>prev_balance</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="curr_balance">
+        <DataField>curr_balance</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="member_code">
+        <DataField>member_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr12">
+        <DataField>Expr12</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr13">
+        <DataField>Expr13</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="statement_dt">
+        <DataField>statement_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="due_dt">
+        <DataField>due_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="statement_amt">
+        <DataField>statement_amt</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="statement_code">
+        <DataField>statement_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr14">
+        <DataField>Expr14</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="region_name">
+        <DataField>region_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr15">
+        <DataField>Expr15</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr16">
+        <DataField>Expr16</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr17">
+        <DataField>Expr17</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr18">
+        <DataField>Expr18</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr19">
+        <DataField>Expr19</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr20">
+        <DataField>Expr20</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="region_code">
+        <DataField>region_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr21">
+        <DataField>Expr21</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="provider_name">
+        <DataField>provider_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr22">
+        <DataField>Expr22</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr23">
+        <DataField>Expr23</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr24">
+        <DataField>Expr24</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr25">
+        <DataField>Expr25</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr26">
+        <DataField>Expr26</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr27">
+        <DataField>Expr27</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr28">
+        <DataField>Expr28</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr29">
+        <DataField>Expr29</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Expr30">
+        <DataField>Expr30</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="provider_code">
+        <DataField>provider_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="payment_no">
+        <DataField>payment_no</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Expr31">
+        <DataField>Expr31</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="payment_dt">
+        <DataField>payment_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="payment_amt">
+        <DataField>payment_amt</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Expr32">
+        <DataField>Expr32</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="payment_code">
+        <DataField>payment_code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
