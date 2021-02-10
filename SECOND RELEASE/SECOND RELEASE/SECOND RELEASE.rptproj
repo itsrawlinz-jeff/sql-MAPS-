@@ -62,6 +62,7 @@
   <ItemGroup>
     <Report Include="CHARTS.rdl" />
     <Report Include="LISTS.rdl" />
+    <Report Include="MAP.rdl" />
     <Report Include="Report2Matrix2017.rdl" />
     <Report Include="subr.rdl" />
     <Report Include="SUBREPORT.rdl" />
